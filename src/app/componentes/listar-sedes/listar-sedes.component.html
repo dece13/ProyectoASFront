@@ -1,0 +1,23 @@
+<div>
+    <h3>Lista de sedes</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Ubicacion</th>
+                <th>Capacidad</th>
+                <th>Horario</th>
+                <th>Descripcion</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let sede of sedes">
+                <td>{{sede.nombre}}</td>
+                <td>{{sede.ubicacion}}</td>
+                <td>{{sede.capacidad}}</td>
+                <td>{{sede.horario}}</td>
+                <td>{{sede.descripcion}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

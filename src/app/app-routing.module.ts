@@ -1,9 +1,9 @@
+import { ListarSedesComponent } from './componentes/listar-sedes/listar-sedes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListarEspaciosComponent } from './componentes/listar-espacios/listar-espacios.component';
 
 const routes: Routes = [
-  { path: '', component: ListarEspaciosComponent },
+  { path: '', component: ListarSedesComponent },
 ];
 
 @NgModule({
