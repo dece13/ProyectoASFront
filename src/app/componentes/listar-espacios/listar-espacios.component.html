@@ -1,0 +1,20 @@
+<div>
+  <h1>Eliminar Espacio</h1>
+
+  <!-- Input para ingresar el ID del espacio -->
+  <label for="espacioId">ID del Espacio:</label>
+  <input
+    type="number"
+    id="espacioId"
+    #espacioId
+    placeholder="Ingrese el ID del espacio"
+  />
+
+  <!-- Botón para eliminar el espacio -->
+  <button (click)="eliminarEspacio(convertirANumero(espacioId.value))">
+    Eliminar Espacio
+  </button>
+
+  <!-- Mensaje de estado -->
+  <p>{{ mensaje }}</p>
+</div>
