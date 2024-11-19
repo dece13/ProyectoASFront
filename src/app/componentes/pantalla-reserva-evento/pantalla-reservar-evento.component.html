@@ -1,29 +1,27 @@
 <div class="main-content">
-    <!-- Mostrar el evento seleccionado -->
-    <div *ngIf="evento" class="evento-info">
-      <h2>Detalles del Evento</h2>
-      <p><strong>Nombre del Evento:</strong> {{ evento?.nombre }}</p>
-      <p><strong>Descripción:</strong> {{ evento?.descripcion }}</p>
-      <p><strong>Ubicación:</strong> {{ evento?.ubicacion }}</p>
-      <p><strong>Precio por Entrada:</strong> {{ evento?.capacidad }}</p>
-  
-      <!-- Ingreso de la cantidad de entradas 
-      <div class="entrada-cantidad">
-        <label for="cantidad">Cantidad de Entradas:</label>
-        <input type="number" id="cantidad" [(ngModel)]="cantidad" min="1" />
-      </div>-->
-  
-      <!-- Botón de Pagar 
-      <button (click)="realizarPago()" class="btn-pagar">Pagar</button>-->
+  <!-- Mostrar el evento seleccionado -->
+  <div *ngIf="evento" class="evento-info">
+    <h2>Detalles del Evento</h2>
+    <p><strong>Nombre del Evento:</strong> {{ evento?.nombre }}</p>
+    <p><strong>Descripción:</strong> {{ evento?.descripcion }}</p>
+    <p><strong>Ubicación:</strong> {{ evento?.ubicacion }}</p>
+    <p><strong>Precio por Entrada:</strong> {{ evento?.capacidad }}</p>
 
-      <a>Aca iria el boton que lleva a la pasarela</a>
-      <!--
-      
-      
-      aca debes poner el boton que conecte con tu pasarela de pago
-      justo ahora quema los datos que se envian a la pasarela
-      
-      -->
-    </div>
+    <!-- Ingreso de la cantidad de entradas 
+    <div class="entrada-cantidad">
+      <label for="cantidad">Cantidad de Entradas:</label>
+      <input type="number" id="cantidad" [(ngModel)]="cantidad" min="1" />
+    </div>-->
+
+    <!-- Botón de Pagar 
+    <button (click)="realizarPago()" class="btn-pagar">Pagar</button>-->
+
+    
+    
   </div>
-  
+  <h2><a>Aca iria el boton que lleva a la pasarela</a></h2>
+  <div>
+    <h1>Reservar Evento</h1>
+    <button (click)="reservarEvento()">Reservar y Pagar</button>
+  </div>
+</div>
