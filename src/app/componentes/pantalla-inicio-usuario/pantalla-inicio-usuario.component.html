@@ -21,7 +21,7 @@
   
     <div class="main-content">
       <!-- Información del usuario cargado -->
-      <div *ngIf="usuario" class="usuario-info">
+      <div ngIf="usuario" class="usuario-info">
         <h2>Información del Arrendatario</h2>
         <p><strong>Nombre:</strong> {{ usuario?.nombre }}</p>
         <!--<p><strong>Apellido:</strong> {{ usuario?.apellidos }}</p>

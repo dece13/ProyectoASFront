@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarSedesComponent } from './componentes/listar-sedes/listar-sedes.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HomeComponent } from './componentes/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     HomeComponent,
     HttpClientModule
   ],
