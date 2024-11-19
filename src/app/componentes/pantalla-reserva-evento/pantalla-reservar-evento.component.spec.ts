@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReservaPantallaEventoComponent } from './pantalla-reservar-evento.component';
 
-describe('PantallaInicioUsuarioComponent', () => {
+describe('PantallaReservaUsuarioComponent', () => {
   let component: ReservaPantallaEventoComponent;
   let fixture: ComponentFixture<ReservaPantallaEventoComponent>;
 

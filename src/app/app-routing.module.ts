@@ -20,6 +20,7 @@ const routes: Routes = [
   {path: 'ReservarEvento/:id' , component: ReservaPantallaEventoComponent},
   {path: 'crudActividad' , component: DinamicaCrudComponent},
   {path: 'crudSede' , component: SedeCrudComponent},
+  {path: 'pantallaReserva' , component: ReservaPantallaEventoComponent},
 ];
 
 @NgModule({

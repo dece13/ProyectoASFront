@@ -12,7 +12,44 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  login(email: string, password: string): Observable<boolean> {
+  login(email: string, password: string): boolean {
+    // Aquí debes implementar la lógica de autenticación, por ejemplo, verificar las credenciales en el backend
+    // Devuelve true si la autenticación es exitosa, de lo contrario, devuelve false
+
+    let userId: number | null = null;
+    let cuenta: string | null = null;
+
+    if (email === 'daniel' && password === 'castellanos') {
+      userId = 1; // ID del usuario autenticado
+      cuenta = '1'; // Arrendatario
+    } else if (email === 'soyel' && password === 'mejor') {
+      userId = 2; // ID del usuario autenticado
+      cuenta = '0'; // Arrendador
+    } else if (email === 'pablooo' && password === 'cascas') {
+      userId = 4; // ID del usuario autenticado
+      cuenta = '1'; // Arrendatario
+    }
+
+    if (userId !== null && cuenta !== null) {
+      // Guardar información de autenticación en localStorage
+      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('userId', userId.toString());
+      localStorage.setItem('cuenta', cuenta);
+
+      // Redirigir al usuario a la página correspondiente
+      if (cuenta === '1') {
+        this.router.navigate(['UsuarioArrendatario/Inicio', userId]);
+      } else {
+        this.router.navigate(['UsuarioArrendador/Inicio', userId]);
+      }
+      return true;
+    } else {
+      // Autenticación fallida
+      return false;
+    }
+  }
+  
+  logind(email: string, password: string): Observable<boolean> {
     // Enviamos las credenciales al backend
     return this.http.post<{ userId: number; cuenta: string }>(`${this.apiUrl}/login`, { email, password })
       .pipe(

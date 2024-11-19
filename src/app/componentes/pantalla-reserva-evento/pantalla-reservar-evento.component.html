@@ -1,31 +1,38 @@
-<div class="main-content">
-    <!-- Mostrar el evento seleccionado -->
-    <div ngIf="evento" class="evento-info">
-      <h2>Detalles del Evento</h2>
-      <p><strong>Nombre del Evento:</strong> {{ evento?.nombre }}</p>
-      <p><strong>Descripción:</strong> {{ evento?.descripcion }}</p>
-      <p><strong>Ubicación:</strong> {{ evento?.ubicacion }}</p>
-      <p><strong>Precio por Entrada:</strong> {{ evento?.capacidad }}</p>
-  
-      <!-- Ingreso de la cantidad de entradas 
-      <div class="entrada-cantidad">
-        <label for="cantidad">Cantidad de Entradas:</label>
-        <input type="number" id="cantidad" [(ngModel)]="cantidad" min="1" />
-      </div>-->
-  
-      <!-- Botón de Pagar 
-      <button (click)="realizarPago()" class="btn-pagar">Pagar</button>-->
+<div>
+  <h2>Gestión de Reservas</h2>
 
-      
-      
-    </div>
-    <h2><a>Aca iria el boton que lleva a la pasarela</a></h2>
-    <!--
-      
-      
-      aca debes poner el boton que conecte con tu pasarela de pago
-      justo ahora quema los datos que se envian a la pasarela
-      
-      -->
+  <!-- Formulario para agregar o actualizar reservas -->
+  <form (ngSubmit)="agregarReserva()">
+    <label for="nombreEspacio">Nombre del Espacio:</label>
+    <input id="nombreEspacio" [(ngModel)]="reserva.nombreEspacio" name="nombreEspacio" required>
+
+    <label for="fecha">Fecha:</label>
+    <input id="fecha" [(ngModel)]="reserva.fecha" name="fecha" required>
+
+    <label for="estado">Estado:</label>
+    <input id="estado" type="checkbox" [(ngModel)]="reserva.estado" name="estado">
+
+    <label for="valor">Valor:</label>
+    <input id="valor" type="number" [(ngModel)]="reserva.valor" name="valor" required>
+
+    <button type="submit">Agregar Reserva</button>
+    <button type="button" (click)="actualizarReserva()">Actualizar Reserva</button>
+    <button type="button" (click)="limpiarFormulario()">Limpiar Formulario</button>
+  </form>
+
+  <!-- Buscar reserva por ID -->
+  <div>
+    <label for="reservaId">ID de la Reserva:</label>
+    <input id="reservaId" type="number" [(ngModel)]="reservaId" name="reservaId">
+    <button (click)="obtenerReservaPorId()">Buscar</button>
   </div>
-  
+
+  <!-- Lista de reservas -->
+  <ul>
+    <li *ngFor="let reserva of reservas">
+      {{ reserva.nombreEspacio }} - {{ reserva.fecha }} - Estado: {{ reserva.estado ? 'Activo' : 'Inactivo' }} - Valor: {{ reserva.valor }}
+      <button (click)="reservaId = reserva.id; obtenerReservaPorId()">Editar</button>
+      <button (click)="borrarReserva()">Borrar</button>
+    </li>
+  </ul>
+</div>
