@@ -3,12 +3,14 @@ export class Usuario{
     constructor(
         public id:number,
         public nombre:string,
-        public apellidos:string,
-        public edad:number,
+        public identificacion:string,
+        public telefono:string,
         public correo:string,
-        public telefono:number,
-        public contrasena:string,
+        public afiliacion:boolean,
+        public fechaNacimiento:Date,
+        public direccion:string,
         public tipoCuenta:number,
+        public contrasena:string,
             
     ){}
 }

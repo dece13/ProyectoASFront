@@ -16,7 +16,7 @@ export class PantallaBuscarEventoComponent {
   // Definición de las propiedades que se utilizan en el template
   datosModelosService: Evento[] = [];
   searchQuery: string = '';  // Propiedad para la búsqueda
-  selectedCategory: string = '';  // Propiedad para la categoría seleccionada
+  selectedUbicacion: string = '';  // Propiedad para la categoría seleccionada
   eventos: Evento[] = [];  // Propiedad para los eventos
 
   constructor(private EventoService: EventoService) {}
@@ -36,7 +36,7 @@ export class PantallaBuscarEventoComponent {
     // Suponiendo que tienes una lógica que filtra eventos
     this.eventos = this.datosModelosService.filter((evento) => 
       evento.nombre.includes(this.searchQuery) && 
-      (this.selectedCategory ? evento.categoria === this.selectedCategory : true)
+      (this.selectedUbicacion ? evento.ubicacion === this.selectedUbicacion : true)
     );
   }
 }

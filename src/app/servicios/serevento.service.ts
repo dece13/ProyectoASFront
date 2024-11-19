@@ -65,7 +65,7 @@ export class EventoService {
   }*/
 
   getEventoExterno(): Promise< Evento[] > {
-    return axios.get< Evento[] >('http://localhost:8080/....').then(response => response.data); // usuario externo cambiar id
+    return axios.get< Evento[] >('http://localhost:8080/GestionarEventos/api/eventos').then(response => response.data); // usuario externo cambiar id
   }
 
   async actualizarUsuario(usuario: Evento): Promise<Evento> {

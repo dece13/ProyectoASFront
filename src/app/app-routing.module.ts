@@ -7,6 +7,7 @@ import { SingUpUsuarioComponent } from './componentes/sing-up-usuario/sing-up-us
 import { InicioPantallaUsuarioComponent } from './componentes/pantalla-inicio-usuario/pantalla-inicio-usuario.component';
 import { PantallaBuscarEventoComponent } from './componentes/Pantalla-Buscar-Evento/pantalla-Buscar-evento.component';
 import { ReservaPantallaEventoComponent } from './componentes/pantalla-reserva-evento/pantalla-reservar-evento.component';
+import { DinamicaCrudComponent } from './componentes/crud-Dinamica/crud-Dinamica.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'Usuario/Inicio/:id' , component: InicioPantallaUsuarioComponent},
   {path: 'BuscarEvento' , component: PantallaBuscarEventoComponent},
   {path: 'ReservarEvento/:id' , component: ReservaPantallaEventoComponent},
+  {path: 'crudActividad' , component: DinamicaCrudComponent},
 ];
 
 @NgModule({

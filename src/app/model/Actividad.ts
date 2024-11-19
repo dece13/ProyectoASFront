@@ -5,7 +5,7 @@ export class Evento {
         public ubicacion: string,
         public capacidad: number,
         public horario: string,
-        public descripcion: string,
-        public categoria: string
+        public descripcion: string
+       
     ) { }
 }

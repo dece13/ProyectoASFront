@@ -8,16 +8,27 @@ import { UsuarioService } from '../../servicios/Usuario.service';
 @Component({
   selector: 'app-sing-up-usuario',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule,RouterModule],
+  imports: [RouterOutlet, CommonModule, FormsModule, RouterModule],
   templateUrl: './sing-up-usuario.component.html',
   styleUrl: './sing-up-usuario.component.css'
 })
 export class SingUpUsuarioComponent {
 
-  nuevoUsuario: Usuario = new Usuario(0, '', '', 0, '', 0, '',0); // Nuevo arrendador a usuario
+  nuevoUsuario: Usuario = new Usuario(
+    0,                 // id
+    '',                // nombre
+    '',                // identificacion
+    '',                // telefono
+    '',                // correo
+    false,             // afiliacion
+    new Date(),        // fechaNacimiento
+    '',                // direccion
+    0,                 // tipoCuenta
+    ''                 // contrasena
+  ); // Nuevo usuario
   datosModelosService: Usuario[] = [];
 
-  constructor(private UsuarioService: UsuarioService) {}
+  constructor(private UsuarioService: UsuarioService) { }
 
   cargarUsuario(): void {
     this.UsuarioService.getUsuarioExterno().then((usuarios) => {
@@ -33,7 +44,18 @@ export class SingUpUsuarioComponent {
       .then(nuevoUsuario => {
         console.log('Usuario agregado:', nuevoUsuario);
         // Aquí puedes realizar cualquier lógica adicional después de agregar el usuario, como limpiar el formulario
-        this.nuevoUsuario = new Usuario(0, '', '', 0, '', 0, '',1);
+        this.nuevoUsuario = new Usuario(
+          0,                 // id
+          '',                // nombre
+          '',                // identificacion
+          '',                // telefono
+          '',                // correo
+          false,             // afiliacion
+          new Date(),        // fechaNacimiento
+          '',                // direccion
+          0,                 // tipoCuenta
+          ''                 // contrasena
+        ); // Nuevo usuario
         this.cargarUsuario();
       })
       .catch(error => {
