@@ -8,7 +8,7 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class EventoService {
-  private apiUrl = 'http://localhost:8080/....'; // URL del usuario api rest
+  private apiUrl = 'http://localhost:8080/GestionarSedes/api/sedes'; // URL del usuario api rest
 
   constructor() { }
   async obtenerEventooPorId(id: number): Promise<Evento> {
@@ -64,8 +64,8 @@ export class EventoService {
     ]);
   }*/
 
-  getEventoExterno(): Promise< Evento[] > {
-    return axios.get< Evento[] >('http://localhost:8080/GestionarEventos/api/eventos').then(response => response.data); // usuario externo cambiar id
+  getEventosExterno(): Promise< Evento[] > {
+    return axios.get< Evento[] >('http://localhost:8080/GestionarSedes/api/sedes').then(response => response.data); // usuario externo cambiar id
   }
 
   async actualizarUsuario(usuario: Evento): Promise<Evento> {

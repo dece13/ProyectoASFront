@@ -22,7 +22,7 @@ export class PantallaBuscarEventoComponent {
   constructor(private EventoService: EventoService) {}
 
   cargarEvento(): void {
-    this.EventoService.getEventoExterno().then((usuarios) => {
+    this.EventoService.getEventosExterno().then((usuarios) => {
       this.datosModelosService = usuarios;
       this.eventos = usuarios;  // Asignamos los eventos a la propiedad 'eventos'
     }).catch((error) => {

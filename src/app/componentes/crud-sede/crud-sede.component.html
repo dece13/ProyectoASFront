@@ -1,0 +1,64 @@
+<div>
+  <h2>Gestión de Actividades</h2>
+
+  <!-- Listar actividades -->
+  <button (click)="listarEvento()">Listar Actividades</button>
+  <ul>
+    <li *ngFor="let actividad of actividades">
+      ID: {{ actividad.id }}, Nombre: {{ actividad.nombre }}, Ubicación: {{ actividad.ubicacion }}, Capacidad: {{ actividad.capacidad }}, Horario: {{ actividad.horario }}, Descripción: {{ actividad.descripcion }}
+    </li>
+  </ul>
+
+  <hr>
+
+  <!-- Formulario para agregar/actualizar actividad -->
+  <h3>Agregar o Actualizar Actividad</h3>
+  <form (ngSubmit)="agregarActividad()">
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" [(ngModel)]="actividad.nombre" name="nombre" required>
+    </div>
+    <div>
+      <label for="ubicacion">Ubicación:</label>
+      <input type="text" [(ngModel)]="actividad.ubicacion" name="ubicacion" required>
+    </div>
+    <div>
+      <label for="capacidad">Capacidad:</label>
+      <input type="number" [(ngModel)]="actividad.capacidad" name="capacidad" required>
+    </div>
+    <div>
+      <label for="horario">Horario:</label>
+      <input type="text" [(ngModel)]="actividad.horario" name="horario" required>
+    </div>
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea [(ngModel)]="actividad.descripcion" name="descripcion" required></textarea>
+    </div>
+    <button type="button" (click)="agregarActividad()">Agregar Actividad</button>
+    <button type="button" (click)="actualizarActividad()">Actualizar Actividad</button>
+  </form>
+
+  <hr>
+
+  <!-- Campo de entrada para ID y acciones relacionadas -->
+  <h3>Acciones con ID</h3>
+  <div>
+    <label for="actividadId">ID de Actividad:</label>
+    <input type="number" [(ngModel)]="actividadId" name="actividadId">
+  </div>
+  <button (click)="obtenerActividadPorId()">Obtener Actividad por ID</button>
+  <button (click)="borrarActividad()">Borrar Actividad por ID</button>
+
+  <hr>
+
+  <!-- Mostrar actividad obtenida por ID -->
+  <div *ngIf="actividad && actividad.id !== 0">
+    <h3>Actividad Obtenida</h3>
+    <p>ID: {{ actividad.id }}</p>
+    <p>Nombre: {{ actividad.nombre }}</p>
+    <p>Ubicación: {{ actividad.ubicacion }}</p>
+    <p>Capacidad: {{ actividad.capacidad }}</p>
+    <p>Horario: {{ actividad.horario }}</p>
+    <p>Descripción: {{ actividad.descripcion }}</p>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { InicioPantallaUsuarioComponent } from './componentes/pantalla-inicio-us
 import { PantallaBuscarEventoComponent } from './componentes/Pantalla-Buscar-Evento/pantalla-Buscar-evento.component';
 import { ReservaPantallaEventoComponent } from './componentes/pantalla-reserva-evento/pantalla-reservar-evento.component';
 import { DinamicaCrudComponent } from './componentes/crud-Dinamica/crud-Dinamica.component';
+import { SedeCrudComponent } from './componentes/crud-sede/crud-sede.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'BuscarEvento' , component: PantallaBuscarEventoComponent},
   {path: 'ReservarEvento/:id' , component: ReservaPantallaEventoComponent},
   {path: 'crudActividad' , component: DinamicaCrudComponent},
+  {path: 'crudSede' , component: SedeCrudComponent},
 ];
 
 @NgModule({
