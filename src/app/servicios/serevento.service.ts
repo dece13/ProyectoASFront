@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Usuario } from '../model/Usuario';
-
-import { Observable, of } from 'rxjs';
-
-import axios from 'axios';
+import { Evento } from '../model/evento';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import axios from 'axios';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class UsuarioService {
-
+export class EventoService {
   private apiUrl = 'http://localhost:8080/....'; // URL del usuario api rest
 
   constructor() { }
-  async obtenerUsuarioPorId(id: number): Promise<Usuario> {
+  async obtenerEventooPorId(id: number): Promise<Evento> {
     try {
-      const response = await axios.get<Usuario>(`${this.apiUrl}/${id}`);
+      const response = await axios.get<Evento>(`${this.apiUrl}/${id}`);
       return response.data;
     } catch (error) {
       console.error('Error al obtener usuario por ID:', error);
@@ -24,14 +21,14 @@ export class UsuarioService {
     }
   }
   // Método para enviar los datos del arrendador al backend
-  agregarUsuario(usuario: Usuario): Promise<Usuario> {
+  agregarEvento(usuario: Evento): Promise<Evento> {
     // Obtener el token CSRF del almacenamiento local o de otra fuente
     const csrfToken = localStorage.getItem('XSRF-TOKEN');
   
     // Devolver una nueva promesa
     return new Promise((resolve, reject) => {
       // Incluir el token CSRF en la solicitud
-      axios.post<Usuario>(
+      axios.post<Evento>(
         this.apiUrl,
         usuario,
         { headers: { 'X-XSRF-TOKEN': csrfToken } }
@@ -67,13 +64,13 @@ export class UsuarioService {
     ]);
   }*/
 
-  getUsuarioExterno(): Promise< Usuario[] > {
-    return axios.get< Usuario[] >('http://localhost:8080/....').then(response => response.data); // usuario externo cambiar
+  getEventoExterno(): Promise< Evento[] > {
+    return axios.get< Evento[] >('http://localhost:8080/....').then(response => response.data); // usuario externo cambiar id
   }
 
-  async actualizarUsuario(usuario: Usuario): Promise<Usuario> {
+  async actualizarUsuario(usuario: Evento): Promise<Evento> {
     try {
-      const response = await axios.put<Usuario>(`${this.apiUrl}/${usuario.id}`, usuario);
+      const response = await axios.put<Evento>(`${this.apiUrl}/${usuario.id}`, usuario);
       return response.data;
     } catch (error) {
       console.error('Error al actualizar arrendador:', error);
@@ -81,11 +78,22 @@ export class UsuarioService {
     }
   }
 
-  async borrarUsuario(id: number): Promise<void> {
+  async borrarEvento(id: number): Promise<void> {
     try {
       await axios.delete(`${this.apiUrl}/${id}`);
     } catch (error) {
       console.error('Error al borrar arrendador:', error);
+      throw error;
+    }
+  }
+
+  
+  async obtenerEventoPorId(id: number): Promise<Evento> {
+    try {
+      const response = await axios.get<Evento>(`${this.apiUrl}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error al obtener usuario por ID:', error);
       throw error;
     }
   }

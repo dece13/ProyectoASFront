@@ -5,6 +5,8 @@ import { HomeComponent } from './componentes/home/home.component';
 import { SingInUsuarioComponent } from './componentes/sing-in-usario/sing-in-usuario.component';
 import { SingUpUsuarioComponent } from './componentes/sing-up-usuario/sing-up-usuario.component';
 import { InicioPantallaUsuarioComponent } from './componentes/pantalla-inicio-usuario/pantalla-inicio-usuario.component';
+import { PantallaBuscarEventoComponent } from './componentes/Pantalla-Buscar-Evento/pantalla-Buscar-evento.component';
+import { ReservaPantallaEventoComponent } from './componentes/pantalla-reserva-evento/pantalla-reservar-evento.component';
 
 
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'singin', component: SingInUsuarioComponent},
   { path: 'singup', component: SingUpUsuarioComponent},
   {path: 'Usuario/Inicio/:id' , component: InicioPantallaUsuarioComponent},
+  {path: 'BuscarEvento' , component: PantallaBuscarEventoComponent},
+  {path: 'ReservarEvento/:id' , component: ReservaPantallaEventoComponent},
 ];
 
 @NgModule({

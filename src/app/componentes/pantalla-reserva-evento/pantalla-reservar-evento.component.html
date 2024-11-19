@@ -1,0 +1,20 @@
+<div class="main-content">
+    <!-- Mostrar el evento seleccionado -->
+    <div *ngIf="evento" class="evento-info">
+      <h2>Detalles del Evento</h2>
+      <p><strong>Nombre del Evento:</strong> {{ evento?.nombre }}</p>
+      <p><strong>Descripción:</strong> {{ evento?.descripcion }}</p>
+      <p><strong>Ubicación:</strong> {{ evento?.ubicacion }}</p>
+      <p><strong>Precio por Entrada:</strong> {{ evento?.capacidad }}</p>
+  
+      <!-- Ingreso de la cantidad de entradas 
+      <div class="entrada-cantidad">
+        <label for="cantidad">Cantidad de Entradas:</label>
+        <input type="number" id="cantidad" [(ngModel)]="cantidad" min="1" />
+      </div>-->
+  
+      <!-- Botón de Pagar 
+      <button (click)="realizarPago()" class="btn-pagar">Pagar</button>-->
+    </div>
+  </div>
+  

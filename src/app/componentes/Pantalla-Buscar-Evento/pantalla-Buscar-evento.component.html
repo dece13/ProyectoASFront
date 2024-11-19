@@ -4,7 +4,7 @@
     <!-- Barra de búsqueda -->
     <div class="search-bar">
       <input type="text" id="search" placeholder="Buscar por nombre o categoría" [(ngModel)]="searchQuery" />
-      <button (click)="searchEvent()">Buscar</button>
+      <!--<button (click)="searchEvent()">Buscar</button>-->
     </div>
   
     <!-- Filtros -->
@@ -27,7 +27,7 @@
           <div class="event-item">
             <h4>{{ evento.nombre }}</h4>
             <p>{{ evento.descripcion }}</p>
-            <button (click)="viewEvent(evento.id)">Ver detalles</button>
+           <!-- <button (click)="viewEvent(evento.id)">Ver detalles</button>-->
           </div>
         </li>
       </ul>
