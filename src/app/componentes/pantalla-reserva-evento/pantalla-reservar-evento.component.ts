@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -36,17 +35,18 @@ export class ReservaPantallaEventoComponent {
   }
 
   reservarEvento(): void {
+    // Datos enviados al backend
     const reservaData = {
-      amount: 100.0 // Valor quemado
+      Amount: 100.00, // Monto quemado
+      Description: `Reserva para el evento: ${this.evento?.nombre}`
     };
 
-    this.http.get<any>('https://localhost:7253/api/PayPal/create-payment')
+    // Realizar la solicitud POST al backend
+    this.http.post<any>('https://localhost:7253/api/PayPal/create-payment', reservaData)
       .subscribe(response => {
-        // Buscar el enlace de aprobación en la respuesta
-        const approvalUrl = response?.links?.find((link: any) => link.rel === 'approval_url')?.href;
+        const approvalUrl = response?.approval_url; // Obtener el enlace de aprobación
         if (approvalUrl) {
-          // Redirigir al usuario al enlace de aprobación de PayPal
-          window.location.href = approvalUrl;
+          window.location.href = approvalUrl; // Redirigir al usuario al enlace de PayPal
         } else {
           console.error('No se encontró el enlace de aprobación en la respuesta.');
         }
