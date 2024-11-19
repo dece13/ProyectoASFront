@@ -20,11 +20,12 @@ export class SingUpUsuarioComponent {
     '',                // identificacion
     '',                // telefono
     '',                // correo
+    '' ,                // contrasena
     false,             // afiliacion
     new Date(),        // fechaNacimiento
     '',                // direccion
-    0,                 // tipoCuenta
-    ''                 // contrasena
+    0                 // tipoCuenta
+    
   ); // Nuevo usuario
   datosModelosService: Usuario[] = [];
 
@@ -50,11 +51,12 @@ export class SingUpUsuarioComponent {
           '',                // identificacion
           '',                // telefono
           '',                // correo
+          '' ,                // contrasena
           false,             // afiliacion
           new Date(),        // fechaNacimiento
           '',                // direccion
-          0,                 // tipoCuenta
-          ''                 // contrasena
+          0                 // tipoCuenta
+          
         ); // Nuevo usuario
         this.cargarUsuario();
       })

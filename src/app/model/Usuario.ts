@@ -6,11 +6,12 @@ export class Usuario{
         public identificacion:string,
         public telefono:string,
         public correo:string,
+        public password:string,
         public afiliacion:boolean,
         public fechaNacimiento:Date,
         public direccion:string,
         public tipoCuenta:number,
-        public contrasena:string,
+        
             
     ){}
 }
