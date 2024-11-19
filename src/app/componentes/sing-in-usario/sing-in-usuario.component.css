@@ -1,0 +1,120 @@
+/* Estilos generales para el contenedor de inicio de sesión */
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff8f0; /* Fondo anaranjado claro */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Flecha en la parte superior, justo fuera del contenedor */
+.back-arrow {
+    position: absolute;
+    top: 30px;
+    left: calc(50% - 300px); /* Alineado justo al lado del contenedor */
+    font-size: 2.5rem; /* Tamaño más grande */
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .back-arrow:hover {
+    color: #e67e22; /* Color naranja cuando se pasa el ratón */
+  }
+  
+  
+  /* Título */
+  .signin-container h2 {
+    font-size: 2rem;
+    color: #d35400; /* Naranja intenso */
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el formulario */
+  form {
+    width: 100%;
+  }
+  
+  /* Estilo para cada grupo de entrada */
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Etiquetas de los campos */
+  .input-group label {
+    font-weight: bold;
+    color: #d35400;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Campos de entrada */
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Estilo del campo de entrada al enfocarse */
+  .input-group input:focus {
+    outline: none;
+    border-color: #e67e22; /* Naranja brillante */
+  }
+  
+  /* Botón de envío */
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #e67e22;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  /* Efecto hover y active en el botón */
+  button[type="submit"]:hover {
+    background-color: #d35400;
+  }
+  
+  button[type="submit"]:active {
+    transform: translateY(2px);
+    background-color: #b34100;
+  }
+  
+  /* Estilos para el texto de pie */
+  .signin-container p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Enlace de registro */
+  .signin-container a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .signin-container a:hover {
+    color: #d35400; /* Enlace en naranja más oscuro al hacer hover */
+  }
+  

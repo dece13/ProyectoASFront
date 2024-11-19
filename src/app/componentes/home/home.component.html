@@ -1,0 +1,16 @@
+<div class="home-container">
+    <h2>Bienvenido a nuestra caja de compensacion</h2>
+    <div class="buttons-container">
+      <!-- Mostrar botón de "Cerrar sesión" si el usuario está autenticado -->
+      <div *ngIf="isLoggedIn(); else notLoggedIn">
+        <button (click)="irInicio()">Ir a tu inicio</button>
+        <button (click)="logout()">Cerrar sesión</button>
+      </div>
+  
+      <!-- Mostrar opciones de registro e inicio de sesión si el usuario no está autenticado -->
+      <ng-template #notLoggedIn>
+        <a href="singup" class="button-arrendatario">Registrarse como Usuario</a>
+        <a href="singin" class="button-arrendatario">Iniciar sesión</a>
+      </ng-template>
+    </div>
+  </div>    

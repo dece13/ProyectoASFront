@@ -1,0 +1,36 @@
+<div class="search-event-container">
+    <h2>Buscar Evento</h2>
+    
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Buscar por nombre o categoría" [(ngModel)]="searchQuery" />
+      <button (click)="searchEvent()">Buscar</button>
+    </div>
+  
+    <!-- Filtros -->
+    <div class="filters">
+      <label for="category">Categoría</label>
+      <select id="category" [(ngModel)]="selectedCategory">
+        <option value="">Selecciona una categoría</option>
+        <option value="concierto">Concierto</option>
+        <option value="deporte">Deporte</option>
+        <option value="teatro">Teatro</option>
+        <!-- Agrega más opciones según las categorías de eventos -->
+      </select>
+    </div>
+  
+    <!-- Resultados de búsqueda -->
+    <div class="event-list">
+      <h3>Resultados:</h3>
+      <ul>
+        <li *ngFor="let evento of eventos">
+          <div class="event-item">
+            <h4>{{ evento.nombre }}</h4>
+            <p>{{ evento.descripcion }}</p>
+            <button (click)="viewEvent(evento.id)">Ver detalles</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
