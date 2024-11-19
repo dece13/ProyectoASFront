@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Evento } from '../model/evento';
+import { Evento } from '../model/Actividad';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import axios from 'axios';

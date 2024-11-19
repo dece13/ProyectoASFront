@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventoService } from '../../servicios/serevento.service'; 
 import { RouterModule, RouterOutlet } from '@angular/router';
-import { Evento } from '../../model/evento';
+import { Evento } from '../../model/Actividad';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Evento } from '../../model/evento';
+import { Evento } from '../../model/Actividad';
 import { EventoService } from '../../servicios/serevento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'; // Importa FormsModule aquí
@@ -38,8 +38,5 @@ export class ReservaPantallaEventoComponent {
     
   }
 
-  logout(): void {
-    this.authService.logout();
-    console.log(localStorage.getItem('loggedIn'))
-  }
+  
 }
