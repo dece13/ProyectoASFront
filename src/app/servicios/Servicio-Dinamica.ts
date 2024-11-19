@@ -4,14 +4,14 @@ import { Dinamica } from '../model/Dinamica';
 import { Observable, of } from 'rxjs';
 
 import axios from 'axios';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DinamicaService {
 
-  private apiUrl = 'http://localhost:8080/GestionarActividad/api/actividad'; // URL del usuario api rest
+  private apiUrl = 'http://localhost:8080/GestionarActividades/api/actividades'; // URL del usuario api rest
 
   constructor() { }
   async obtenerActividadPorId(id: number): Promise<Dinamica> {
@@ -23,6 +23,11 @@ export class DinamicaService {
       throw error;
     }
   }
+
+  private headers = new HttpHeaders(
+    { "Content-Type": "application/json" }
+  )
+
   // Método para enviar los datos del arrendador al backend
   agregarActividad(usuario: Dinamica): Promise<Dinamica> {
     // Obtener el token CSRF del almacenamiento local o de otra fuente
@@ -68,7 +73,7 @@ export class DinamicaService {
   }*/
 
   getActividadExterno(): Promise< Dinamica[] > {
-    return axios.get< Dinamica[] >('http://localhost:8080/GestionarActividad/api/actividad').then(response => response.data); // usuario externo cambiar
+    return axios.get< Dinamica[] >('http://localhost:8080/GestionarActividades/api/actividades').then(response => response.data); // usuario externo cambiar
   }
 
   async actualizarActividad(usuario: Dinamica): Promise<Dinamica> {

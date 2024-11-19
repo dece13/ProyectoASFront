@@ -4,7 +4,7 @@ import { Usuario } from '../model/Usuario';
 import { Observable, of } from 'rxjs';
 
 import axios from 'axios';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +23,10 @@ export class UsuarioService {
       throw error;
     }
   }
+
+  private headers = new HttpHeaders(
+    { "Content-Type": "application/json" }
+  )
   // Método para enviar los datos del arrendador al backend
   agregarUsuario(usuario: Usuario): Promise<Usuario> {
     // Obtener el token CSRF del almacenamiento local o de otra fuente
